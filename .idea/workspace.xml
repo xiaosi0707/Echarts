@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0ff1579-4281-4b55-80f2-1aef313f6cfe" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/第五节：弹窗组件.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/第五节：常用标记线和标记点.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -49,11 +49,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="第五节：弹窗组件.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="第五节：弹窗组件.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/第五节：弹窗组件.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="689">
-              <caret line="31" column="28" lean-forward="true" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+              <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="第五节：常用标记线和标记点.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/第五节：常用标记线和标记点.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="554">
+              <caret line="63" column="45" lean-forward="false" selection-start-line="63" selection-start-column="45" selection-end-line="63" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -78,6 +88,7 @@
         <option value="$PROJECT_DIR$/第三节：折线图.html" />
         <option value="$PROJECT_DIR$/第四节：工具箱.html" />
         <option value="$PROJECT_DIR$/第五节：弹窗组件.html" />
+        <option value="$PROJECT_DIR$/第五节：常用标记线和标记点.html" />
       </list>
     </option>
   </component>
@@ -169,12 +180,12 @@
       <option name="presentableId" value="Default" />
       <updated>1527498806296</updated>
       <workItem from="1527498810964" duration="1556000" />
-      <workItem from="1527517797797" duration="1590000" />
+      <workItem from="1527517797797" duration="2360000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3146000" />
+    <option name="totallyTimeSpent" value="3916000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3226" height="1746" extended-state="6" />
@@ -249,7 +260,15 @@
     <entry file="file://$PROJECT_DIR$/第五节：弹窗组件.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="689">
-          <caret line="31" column="28" lean-forward="true" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第五节：常用标记线和标记点.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="63" column="45" lean-forward="false" selection-start-line="63" selection-start-column="45" selection-end-line="63" selection-end-column="45" />
           <folding />
         </state>
       </provider>
