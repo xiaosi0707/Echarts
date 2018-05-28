@@ -8,9 +8,9 @@
 <body>
 <div id="main" style="width: 900px; height: 600px;"></div>
 <script>
-    // 基于准备好的DOM，初始化echarts实例
+    // 第一步：基于准备好的DOM，初始化echarts实例
     let myChart = echarts.init(document.getElementById('main'));
-    // 指定图表的配置项和数据
+    // 第二步：指定图表的配置项和数据
     let option = {
         //标题
         title: {
@@ -47,7 +47,7 @@
             }
         ]
     }
-    // 使用刚指定的配置项和数据显示图表
+    // 第三步：使用刚指定的配置项和数据显示图表
     myChart.setOption(option);
 </script>
 </body>
