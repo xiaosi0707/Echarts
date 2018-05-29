@@ -28,6 +28,7 @@
     let searchBtn = $('#search-btn');
     let token = 'xl4qLupo6su7GklGkxYZu3a9f2nBG1O1';
     let myChart = echarts.init(document.getElementById('main'));
+    let chartData = [];
 
     searchBtn.click(function () {
         let url = 'http://api.map.baidu.com/geocoder/v2/?address=' + placeInput.val() + '&output=json&ak=' + token + '&callback=?'
@@ -35,7 +36,11 @@
             $.getJSON(url, function (res) {
                 if (res.status === 0) {
                     console.log(placeInput.val(), res)
-                    drawMap(placeInput.val(), res.result.location)
+                    chartData.push({
+                        name: placeInput.val(),
+                        value: [res.result.location.lng, res.result.location.lat]
+                    })
+                    drawMap(placeInput.val())
                 } else {
                     alert('没有找到位置信息！')
                 }
@@ -79,12 +84,7 @@
                 name: '地址',
                 type: 'scatter',
                 coordinateSystem: 'geo',
-                data: [
-                    {
-                        name: name,
-                        value: [loc.lng, loc.lat]
-                    }
-                ],
+                data: chartData,
                 symbolSize:function (val) {
                     return 10;
                 }
