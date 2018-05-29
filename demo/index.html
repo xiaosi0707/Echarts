@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="bootstrap.min.css">
-    <script src="jquery-1.8.3.min.js"></script>
-    <script src="echarts.min.js"></script>
-    <script src="china.js"></script>
+
 </head>
 <body>
 <div class="container">
@@ -22,23 +20,79 @@
         </div>
     </div>
 </div>
+<script src="jquery-1.8.3.min.js"></script>
+<script src="echarts.min.js"></script>
+<script src="china.js"></script>
 <script>
     let placeInput = $('#place-input');
     let searchBtn = $('#search-btn');
     let token = 'xl4qLupo6su7GklGkxYZu3a9f2nBG1O1';
+    let myChart = echarts.init(document.getElementById('main'));
 
     searchBtn.click(function () {
-        let url = 'http://api.map.baidu.com/geocoder/v2/?address=' + placeInput.val() + '&output=json&ak=' + token + '&callback=showLocation'
+        let url = 'http://api.map.baidu.com/geocoder/v2/?address=' + placeInput.val() + '&output=json&ak=' + token + '&callback=?'
         if (placeInput.val()) {
             $.getJSON(url, function (res) {
                 if (res.status === 0) {
-                    console.log(val, res)
+                    console.log(placeInput.val(), res)
+                    drawMap(placeInput.val(), res.result.location)
                 } else {
                     alert('没有找到位置信息！')
                 }
             })
         }
     })
+    
+    function drawMap(name, loc) {
+        console.log(loc)
+        var option = {
+            backgroundColor: '#404a59',
+            title: {
+                text: '地址搜索',
+                left: 'center',
+                textStyle: {
+                    color: '#fff'
+                }
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+            geo: {
+                map: 'china',
+                label:{
+                    emphasis:{
+                        show: false
+                    }
+                },
+                roam: true,
+                itemStyle: {
+                    normal: {
+                        areaColor: '#323c48',
+                        borderColor: '#111'
+                    },
+                    emphasis: {
+                        areaColor: '#2a333d'
+                    }
+                }
+            },
+            series: {
+                name: '地址',
+                type: 'scatter',
+                coordinateSystem: 'geo',
+                data: [
+                    {
+                        name: name,
+                        value: [loc.lng, loc.lat]
+                    }
+                ],
+                symbolSize:function (val) {
+                    return 10;
+                }
+            }
+        }
+        myChart.setOption(option)
+    }
+    
 </script>
 </body>
 </html>
