@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width: 900px; height: 600px;"></div>
+<script>
+    // 第一步：基于准备好的DOM，初始化echarts实例
+    let myChart = echarts.init(document.getElementById('main'));
+    // 第二步：指定图表的配置项和数据
+    let option = {
+        //标题
+        title: {
+            text: '完成率',
+            left: 'center',
+            top: 20,
+            textStyle: {
+                color: '#ccc'
+            }
+        },
+        toolbox: {
+            show: true,
+            showTitle: true,
+            feature: {
+                saveAsImage: {
+                    type: 'png'
+                },
+            }
+        },
+        // 数据
+        series: [
+            {
+                name:'访问来源',
+                type:'gauge',
+                radius : '55%',
+                data:[
+                    {value: 32, name: '完成率'}
+                ]
+            }
+        ]
+    };
+    setInterval(function () {
+        option.series[0].data[0].value = Math.round(Math.random()*(100-0)+0); // 随机数
+        myChart.setOption(option);
+    }, 2000)
+    // 第三步：使用刚指定的配置项和数据显示图表
+    myChart.setOption(option);
+</script>
+</body>
+</html>
