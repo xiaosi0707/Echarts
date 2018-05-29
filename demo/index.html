@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery-1.8.3.min.js"></script>
+    <script src="echarts.min.js"></script>
+    <script src="china.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form action="" class="form-horizontal">
+                <input type="text" class="form-control" id="place-input" placeholder="请输入地址">
+                <button type="button" class="btn btn-success" id="search-btn">查询</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div id="main" style="height:500px"></div>
+        </div>
+    </div>
+</div>
+<script>
+    let placeInput = $('#place-input');
+    let searchBtn = $('#search-btn');
+    let token = 'xl4qLupo6su7GklGkxYZu3a9f2nBG1O1';
+
+    searchBtn.click(function () {
+        let url = 'http://api.map.baidu.com/geocoder/v2/?address=' + placeInput.val() + '&output=json&ak=' + token + '&callback=showLocation'
+        if (placeInput.val()) {
+            $.getJSON(url, function (res) {
+                if (res.status === 0) {
+                    console.log(val, res)
+                } else {
+                    alert('没有找到位置信息！')
+                }
+            })
+        }
+    })
+</script>
+</body>
+</html>
